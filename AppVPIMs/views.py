@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 
 from AppVPIMs.forms import GuitarraFormulario, BajoFormulario, PedalFormulario, AmpliFormulario
@@ -87,3 +88,16 @@ def ampli_formulario(request):
     else:
         miFormulario = AmpliFormulario()
     return render(request, "AppVPIMs/ampli_formulario.html", {"miFormulario":miFormulario})
+
+def busqueda_guitarra(request):
+    return render(request, "AppVPIMs/busqueda_guitarra.html")
+
+def buscar(request):
+    if request.GET["marca"]:
+        marca = request.GET['marca']
+        guitarras = Guitarra.objects.filter(marca__icontains=marca)
+        bajos = Bajo.objects.filter(marca__icontains=marca)
+        return render(request, "AppVPIMs/resultadosBusquedaG.html", {"guitarras":guitarras, "marca":marca})
+    else:
+        respuesta = "No enviaste datos"
+    return HttpResponse(respuesta)

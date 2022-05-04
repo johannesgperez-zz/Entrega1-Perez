@@ -11,4 +11,6 @@ urlpatterns = [
     path('bajoformulario', views.bajo_formulario, name="bajoformulario"),
     path('pedalformulario', views.pedal_formulario, name="pedalformulario"),
     path('ampliformulario', views.ampli_formulario, name="ampliformulario"),
+    path('busquedaguitarra', views.busqueda_guitarra, name="busquedaguitarra"),
+    path('resultadosBusquedaG/', views.buscar)
 ]

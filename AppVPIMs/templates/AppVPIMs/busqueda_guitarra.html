@@ -1,0 +1,14 @@
+{% extends 'AppVPIMs/inicio.html' %}
+
+{% block content %}
+
+<h3>Ingresa una marca de guitarra</h3>
+
+<form action="/resultadosBusquedaG/" method="GET">
+
+<input type="text" name="marca" id="marca">
+
+<input type="submit" value="buscar">
+
+</form>
+{% endblock %}

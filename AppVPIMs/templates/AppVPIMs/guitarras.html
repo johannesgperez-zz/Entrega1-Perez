@@ -1,7 +1,13 @@
 {% extends 'AppVPIMs/inicio.html' %}
 
 {% block content %}
-
+<p>
 <h1>ACA VA EL CUERPO DE LA SECCION GUITARRAS</h1>
-
+</p>
+<p>
+<h3>Quieres agregar una guitarra a nuestra base de datos?</h3> Haz Click <a href="{% url 'guitarraformulario' %}">Aca</a>
+</p>
+<p>
+<h3>Quieres consultar las guitarras que se encuentran disponible en nuestra base de datos?</h3> Haz Click <a href="{% url 'busquedaguitarra' %}">Aca</a>
+</p>
 {% endblock %}
