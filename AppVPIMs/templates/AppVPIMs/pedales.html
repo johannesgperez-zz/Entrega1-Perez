@@ -2,9 +2,21 @@
 
 {% block content %}
 <p>
-<h1>ACA VA EL CUERPO DE LA SECCION PEDALES</h1>
+    <h3 style="color:dodgerblue">Listado de Pedales Disponibles:</h3>
 </p>
+    {% for pedal in pedales %}
+    <ul>
+        <li> 
+    <b>Marca:</b> {{pedal.marca}} --
+    <b>Tipo de Efecto:</b> {{pedal.tipo_efecto}} --
+    <b>Año:</b> {{pedal.anio}} --
+    <b>Descripción:</b> {{pedal.descripcion}} --
+    <b>Precio (US$):</b> {{pedal.precio}} --
+    <b>Teléfono de Contacto:</b> {{pedal.telefono_contacto}}
+        </li> 
+    </ul>
+    {% endfor %}
 <p>
-<h3>Quieres agregar un pedal a nuestra base de datos?</h3> Haz Click <a href="{% url 'pedalformulario' %}">Aca</a>
+<h3>Quieres agregar un pedal a nuestra base de datos?</h3> Haz Click <a href="{% url 'pedalFormulario' %}">Acá</a>
 </p>
 {% endblock %}

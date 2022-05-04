@@ -2,12 +2,23 @@
 
 {% block content %}
 <p>
-<h1>ACA VA EL CUERPO DE LA SECCION GUITARRAS</h1>
+    <h3 style="color:dodgerblue">Listado de Guitarras Disponibles:</h3>
 </p>
+    {% for guitarra in guitarras %}
+    <ul>
+        <li> 
+    <b>Marca:</b> {{guitarra.marca}} --
+    <b>Modelo:</b> {{guitarra.modelo}} --
+    <b>Año:</b> {{guitarra.anio}} --
+    <b>Cuerdas:</b> {{guitarra.cuerdas}} --
+    <b>Descripción:</b> {{guitarra.descripcion}} --
+    <b>Precio (US$):</b> {{guitarra.precio}} --
+    <b>Teléfono de Contacto:</b> {{guitarra.telefono_contacto}}
+        </li> 
+    </ul>
+    {% endfor %}
 <p>
-<h3>Quieres agregar una guitarra a nuestra base de datos?</h3> Haz Click <a href="{% url 'guitarraformulario' %}">Aca</a>
+<h3>Quieres agregar una guitarra a nuestra base de datos?</h3> Haz Click <a href="{% url 'guitarraFormulario' %}">Acá</a>
 </p>
-<p>
-<h3>Quieres consultar las guitarras que se encuentran disponible en nuestra base de datos?</h3> Haz Click <a href="{% url 'busquedaguitarra' %}">Aca</a>
-</p>
+
 {% endblock %}

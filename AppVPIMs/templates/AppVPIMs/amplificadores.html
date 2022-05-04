@@ -2,9 +2,21 @@
 
 {% block content %}
 <p>
-<h1>ACA VA EL CUERPO DE LA SECCION AMPLIFICADORES</h1>
+    <h3 style="color:dodgerblue">Listado de Amplificadores Disponibles:</h3>
 </p>
+    {% for amplificador in amplificadores %}
+    <ul>
+        <li> 
+    <b>Marca:</b> {{amplificador.marca}} --
+    <b>Tipo de Efecto:</b> {{amplificador.tipo_amplificador}} --
+    <b>Año:</b> {{amplificador.anio}} --
+    <b>Descripción:</b> {{amplificador.descripcion}} --
+    <b>Precio (US$):</b> {{amplificador.precio}} --
+    <b>Teléfono de Contacto:</b> {{amplificador.telefono_contacto}}
+        </li> 
+    </ul>
+    {% endfor %}
 <p>
-<h3>Quieres agregar un amplificador a nuestra base de datos?</h3> Haz Click <a href="{% url 'ampliformulario' %}">Aca</a>
+<h3>Quieres agregar un amplificador a nuestra base de datos?</h3> Haz Click <a href="{% url 'ampliFormulario' %}">Acá</a>
 </p>
 {% endblock %}

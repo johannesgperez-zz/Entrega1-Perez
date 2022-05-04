@@ -2,9 +2,22 @@
 
 {% block content %}
 <p>
-<h1>ACA VA EL CUERPO DE LA SECCION BAJOS</h1>
+    <h3 style="color:dodgerblue">Listado de Bajos Disponibles:</h3>
 </p>
+    {% for bajo in bajos %}
+    <ul>
+        <li> 
+    <b>Marca:</b> {{bajo.marca}} --
+    <b>Modelo:</b> {{bajo.modelo}} --
+    <b>Año:</b> {{bajo.anio}} --
+    <b>Cuerdas:</b> {{bajo.cuerdas}} --
+    <b>Descripción:</b> {{bajo.descripcion}} --
+    <b>Precio (US$):</b> {{bajo.precio}} --
+    <b>Teléfono de Contacto:</b> {{bajo.telefono_contacto}}
+        </li> 
+    </ul>
+    {% endfor %}
 <p>
-<h3>Quieres agregar un bajo a nuestra base de datos?</h3> Haz Click <a href="{% url 'bajoformulario' %}">Aca</a>
+<h3>Quieres agregar un bajo a nuestra base de datos?</h3> Haz Click <a href="{% url 'bajoFormulario' %}">Acá</a>
 </p>
 {% endblock %}

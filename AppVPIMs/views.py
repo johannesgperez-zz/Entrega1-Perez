@@ -8,16 +8,20 @@ def inicio(request):
     return render(request, "AppVPIMs/inicio.html")
 
 def guitarras(request):
-    return render(request, "AppVPIMs/guitarras.html")
+    guitarras = Guitarra.objects.all()
+    return render(request, "AppVPIMs/guitarras.html", {'guitarras':guitarras})
 
 def bajos(request):
-    return render(request, "AppVPIMs/bajos.html")
+    bajos = Bajo.objects.all()
+    return render(request, "AppVPIMs/bajos.html", {'bajos':bajos})
 
 def pedales(request):
-    return render(request, "AppVPIMs/pedales.html")
+    pedales = Pedal.objects.all()
+    return render(request, "AppVPIMs/pedales.html", {'pedales':pedales})
 
 def amplificadores(request):
-    return render(request, "AppVPIMs/amplificadores.html")
+    amplificadores = Amplificador.objects.all()
+    return render(request, "AppVPIMs/amplificadores.html", {'amplificadores':amplificadores})
 
 def guitarra_formulario(request):
     if request.method == 'POST':
@@ -89,15 +93,17 @@ def ampli_formulario(request):
         miFormulario = AmpliFormulario()
     return render(request, "AppVPIMs/ampli_formulario.html", {"miFormulario":miFormulario})
 
-def busqueda_guitarra(request):
-    return render(request, "AppVPIMs/busqueda_guitarra.html")
+def busqueda_instrumento(request):
+    return render(request, "AppVPIMs/busqueda_instrumento.html")
 
 def buscar(request):
     if request.GET["marca"]:
         marca = request.GET['marca']
         guitarras = Guitarra.objects.filter(marca__icontains=marca)
         bajos = Bajo.objects.filter(marca__icontains=marca)
-        return render(request, "AppVPIMs/resultadosBusquedaG.html", {"guitarras":guitarras, "marca":marca})
+        pedales = Pedal.objects.filter(marca__icontains=marca)
+        amplificadores = Amplificador.objects.filter(marca__icontains=marca)
+        return render(request, "AppVPIMs/resultadosBusqueda.html", {"guitarras":guitarras, "bajos":bajos, "pedales":pedales, "amplificadores":amplificadores, "marca":marca})
     else:
         respuesta = "No enviaste datos"
     return HttpResponse(respuesta)

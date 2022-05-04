@@ -7,10 +7,10 @@ urlpatterns = [
     path('bajos', views.bajos, name="bajos"),
     path('pedales', views.pedales, name="pedales"),
     path('amplificadores', views.amplificadores, name="amplificadores"),
-    path('guitarraformulario', views.guitarra_formulario, name="guitarraformulario"),
-    path('bajoformulario', views.bajo_formulario, name="bajoformulario"),
-    path('pedalformulario', views.pedal_formulario, name="pedalformulario"),
-    path('ampliformulario', views.ampli_formulario, name="ampliformulario"),
-    path('busquedaguitarra', views.busqueda_guitarra, name="busquedaguitarra"),
-    path('resultadosBusquedaG/', views.buscar)
+    path('guitarraFormulario', views.guitarra_formulario, name="guitarraFormulario"),
+    path('bajoFormulario', views.bajo_formulario, name="bajoFormulario"),
+    path('pedalFormulario', views.pedal_formulario, name="pedalFormulario"),
+    path('ampliFormulario', views.ampli_formulario, name="ampliFormulario"),
+    path('busquedaInstrumento', views.busqueda_instrumento, name="busquedaInstrumento"),
+    path('resultadosBusqueda/', views.buscar)
 ]

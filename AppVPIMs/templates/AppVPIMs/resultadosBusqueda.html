@@ -1,0 +1,45 @@
+{% extends 'AppVPIMs/inicio.html' %}
+
+{% block content %}
+<h3>Resultado(s) de la Búsqueda</h3>
+{% if guitarras %}
+Guitarra(s)
+{% for guitarra in guitarras %}
+<ul>
+<li><b>Marca:</b> {{guitarra.marca}} --- <b>Modelo:</b> {{guitarra.modelo}} --- <b>Año:</b> {{guitarra.anio}} --- <b>Cuerdas:</b> {{guitarra.cuerdas}} --- <b>Descripción:</b> {{guitarra.descripcion}} --- <b>Precio(US$):</b> {{guitarra.precio}} --- <b>Teléfono de Contacto:</b> {{guitarra.telefono_contacto}} </li>
+</ul>
+{% endfor %}
+
+{% endif %}
+
+{% if bajos %}
+Bajo(s)
+{% for bajo in bajos %}
+<ul>
+<li><b>Marca:</b> {{bajo.marca}} --- <b>Modelo:</b> {{bajo.modelo}} --- <b>Año:</b> {{bajo.anio}} --- <b>Cuerdas:</b> {{bajo.cuerdas}} --- <b>Descripción:</b> {{bajo.descripcion}} --- <b>Precio(US$):</b> {{bajo.precio}} --- <b>Teléfono de Contacto:</b> {{bajo.telefono_contacto}} </li>
+</ul>
+{% endfor %}
+
+{% endif %}
+
+{% if pedales %}
+Pedal(es)
+{% for pedal in pedales %}
+<ul>
+<li><b>Marca:</b> {{pedal.marca}} --- <b>Tipo de Efecto:</b> {{pedal.tipo_efecto}} --- <b>Año:</b> {{pedal.anio}} --- <b>Descripción:</b> {{pedal.descripcion}} --- <b>Precio(US$):</b> {{pedal.precio}} --- <b>Teléfono de Contacto:</b> {{pedal.telefono_contacto}} </li>
+</ul>
+{% endfor %}
+
+{% endif %}
+
+{% if amplificadores %}
+Amplificador(es)
+{% for amplificador in amplificadores %}
+<ul>
+<li><b>Marca:</b> {{amplificador.marca}} --- <b>Tipo de Amplificador:</b> {{amplificador.tipo_amplificador}} --- <b>Año:</b> {{amplificador.anio}} --- <b>Descripción:</b> {{amplificador.descripcion}} --- <b>Precio(US$):</b> {{amplificador.precio}} --- <b>Teléfono de Contacto:</b> {{amplificador.telefono_contacto}} </li>
+</ul>
+{% endfor %}
+
+{% endif %}
+
+{% endblock %}

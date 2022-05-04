@@ -33,12 +33,17 @@
         </div>
       </nav>
 
+      
 
       {% block content %}
-
-      <h1>ACA VA EL CUERPO DEL INICIO</h1>
-
+      <p>
+      <h1 style="color:dodgerblue">Bienvenido(a) al Portal de Venta y Permuta de Instrumentos Musicales</h1>
+      </p>
       {% endblock %}
+
+      <p>
+        <h3>Quieres consultar los instrumentos que se encuentran disponibles en nuestra base de datos?</h3> Haz Click <a href="{% url 'busquedaInstrumento' %}">Acá</a>
+      </p>
     
 </body>
 </html>
